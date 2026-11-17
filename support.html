@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#30343B">
+  <meta name="description" content="Contact Raining Star Labs for Dream Cat: First Dream support, questions, and feedback.">
+  <title>Contact & Support | Raining Star Labs</title>
+
+  <style>
+    :root {
+      --gunmetal: #30343B;
+      --purple: #30243F;
+      --green: #244C3C;
+      --green-light: #78A68A;
+      --white: #EAE8E5;
+      --muted: #AAA6B0;
+      --border: #4C4854;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--gunmetal);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .layout {
+      width: min(1320px, 100%);
+      min-height: 100vh;
+      margin: auto;
+      padding: 72px 7% 35px;
+      display: grid;
+      grid-template-columns: minmax(240px, 34%) minmax(0, 1fr);
+      grid-template-rows: 1fr auto;
+      gap: 48px;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+      position: sticky;
+      top: 72px;
+      align-self: start;
+    }
+
+    .brand {
+      margin-bottom: 90px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(25px, 2.8vw, 36px);
+      font-weight: 500;
+      letter-spacing: -1.4px;
+      line-height: 1.2;
+    }
+
+    .brand p {
+      margin: 12px 0 0;
+      font-size: 12px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .sidebar-label {
+      margin-bottom: 25px;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .game-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .game-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 0;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 15px;
+      text-align: left;
+      transition: transform 300ms ease, color 300ms ease;
+    }
+
+    .game-item::before {
+      content: "";
+      width: 2px;
+      height: 22px;
+      flex-shrink: 0;
+      background: transparent;
+      transition: background 300ms ease;
+    }
+
+    .game-item.active {
+      color: var(--white);
+    }
+
+    .game-item.active::before {
+      background: var(--green-light);
+    }
+
+    .game-item:not(.disabled):hover {
+      transform: translateX(12px);
+      color: var(--white);
+    }
+
+    .game-item:not(.disabled):hover::before {
+      background: var(--green-light);
+    }
+
+    .game-item.disabled {
+      opacity: 0.43;
+      cursor: default;
+    }
+
+    /* CONTENT */
+
+    main {
+      min-width: 0;
+      padding-top: 5px;
+      animation: appear 650ms ease both;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 23px;
+      color: var(--green-light);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--green-light);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 400;
+      letter-spacing: -1.3px;
+    }
+
+    .intro {
+      max-width: 540px;
+      margin: 0 0 38px;
+      color: #C5C0CA;
+      font-size: 15px;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    /* FORM */
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    label {
+      color: #D1CBD5;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 17px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      outline: none;
+      background: #393844;
+      color: var(--white);
+      font: inherit;
+      font-size: 14px;
+      transition: border-color 200ms ease,
+        background 200ms ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #97919F;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--green-light);
+      background: #3D3B47;
+    }
+
+    textarea {
+      min-height: 170px;
+      resize: vertical;
+      line-height: 1.7;
+    }
+
+    .send-button {
+      align-self: flex-start;
+      min-width: 170px;
+      margin-top: 5px;
+      padding: 15px 25px;
+      border: 1px solid #4B7960;
+      border-radius: 3px;
+      background: var(--green);
+      color: var(--white);
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform 250ms ease,
+        background 250ms ease;
+    }
+
+    .send-button:hover:not(:disabled) {
+      transform: translateY(-3px);
+      background: #326049;
+    }
+
+    .send-button:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    .form-status {
+      min-height: 24px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .form-status.success {
+      color: #A4D9B6;
+    }
+
+    .form-status.error {
+      color: #F1B5B5;
+    }
+
+    .privacy-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .privacy-note a,
+    .direct-email a {
+      color: #B9D0C0;
+    }
+
+    .privacy-note a:hover,
+    .direct-email a:hover {
+      color: var(--white);
+    }
+
+    .rule {
+      height: 1px;
+      margin: 34px 0 25px;
+      background: var(--border);
+    }
+
+    .direct-email {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 32px;
+      color: #B9D0C0;
+      font-size: 12px;
+      transition: transform 250ms ease;
+    }
+
+    .back-link:hover {
+      transform: translateX(-5px);
+    }
+
+    footer {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: #97929D;
+      font-size: 11px;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .layout {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        padding: 40px 7% 25px;
+      }
+
+      .sidebar { position: static; }
+      .brand { margin-bottom: 45px; }
+      .brand h1 { font-size: 30px; }
+      .game-list { gap: 4px; }
+      .game-item { min-height: 42px; font-size: 14px; }
+      main { padding-top: 0; }
+      h2 { font-size: 34px; }
+      .intro { font-size: 14px; }
+      footer { margin-top: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <header class="brand">
+        <h1>Raining Star Labs</h1>
+        <p>Independent Game Studio</p>
+      </header>
+
+      <nav aria-label="Our games">
+        <div class="sidebar-label">Our Games</div>
+
+        <div class="game-list">
+          <a class="game-item active" href="index.html">
+            Dream Cat: First Dream
+          </a>
+          <span class="game-item disabled">Coming Soon</span>
+          <span class="game-item disabled">Coming Soon</span>
+        </div>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="eyebrow">Contact / Support</div>
+
+      <h2>Get in touch.</h2>
+
+      <p class="intro">
+        Have a question, feedback, or something not
+        working quite right in Dream Cat: First Dream?
+        Send us a message and we'll be happy to help.
+      </p>
+
+      <form
+        id="support-form"
+        class="contact-form"
+        action="https://formspree.io/f/xljbblve"
+        method="POST"
+      >
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Name"
+            autocomplete="name"
+            maxlength="100"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            maxlength="254"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="Dream Cat Support">
+              Dream Cat: First Dream — Support
+            </option>
+            <option value="Bug Report">Bug Report</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="How can we help?"
+            maxlength="10000"
+            required
+          ></textarea>
+        </div>
+
+        <p class="privacy-note">
+          Your information will be used to respond to
+          your inquiry. Form submissions are processed
+          through Formspree. See our
+          <a href="privacy.html">Privacy Policy</a>.
+        </p>
+
+        <button
+          id="send-button"
+          class="send-button"
+          type="submit"
+        >
+          Send Message
+        </button>
+
+        <div
+          id="form-status"
+          class="form-status"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+      </form>
+
+      <div class="rule"></div>
+
+      <p class="direct-email">
+        Prefer email?<br>
+        <a href="mailto:support@rainingstarlabs.com">
+          support@rainingstarlabs.com
+        </a>
+      </p>
+
+      <a class="back-link" href="index.html">
+        ← Back to Dream Cat
+      </a>
+    </main>
+
+    <footer>
+      <span>
+        © <span id="year">2026</span> Raining Star Labs
+      </span>
+      <span lang="zh-CN">一家献给雨欣的公司</span>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const form = document.getElementById("support-form");
+    const button = document.getElementById("send-button");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      button.disabled = true;
+      button.textContent = "Sending...";
+      status.textContent = "";
+      status.className = "form-status";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          status.textContent =
+            "Message sent successfully. Thank you for reaching out!";
+          status.className = "form-status success";
+          form.reset();
+        } else {
+          status.textContent =
+            "Your message could not be sent. Please try again or email us directly.";
+          status.className = "form-status error";
+        }
+      } catch (error) {
+        status.textContent =
+          "Connection error. Please try again or email us directly.";
+        status.className = "form-status error";
+      } finally {
+        button.disabled = false;
+        button.textContent = "Send Message";
+      }
+    });
+  </script>
+</body>
+</html>
