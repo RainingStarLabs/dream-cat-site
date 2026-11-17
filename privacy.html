@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#30343B">
+  <meta name="description" content="Privacy Policy for Raining Star Labs and Dream Cat: First Dream.">
+  <title>Privacy Policy | Raining Star Labs</title>
+
+  <style>
+    :root {
+      --gunmetal: #30343B;
+      --purple: #30243F;
+      --green: #244C3C;
+      --green-light: #78A68A;
+      --white: #EAE8E5;
+      --muted: #AAA6B0;
+      --border: #4C4854;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--gunmetal);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .layout {
+      width: min(1320px, 100%);
+      min-height: 100vh;
+      margin: auto;
+      padding: 72px 7% 35px;
+      display: grid;
+      grid-template-columns: minmax(240px, 34%) minmax(0, 1fr);
+      grid-template-rows: 1fr auto;
+      gap: 48px;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+      position: sticky;
+      top: 72px;
+      align-self: start;
+    }
+
+    .brand { margin-bottom: 90px; }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(25px, 2.8vw, 36px);
+      font-weight: 500;
+      letter-spacing: -1.4px;
+      line-height: 1.2;
+    }
+
+    .brand p {
+      margin: 12px 0 0;
+      font-size: 12px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .sidebar-label {
+      margin-bottom: 25px;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .game-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .game-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 0;
+      color: var(--muted);
+      font-size: 15px;
+      transition: transform 300ms ease, color 300ms ease;
+    }
+
+    .game-item::before {
+      content: "";
+      width: 2px;
+      height: 22px;
+      flex-shrink: 0;
+      background: transparent;
+      transition: background 300ms ease;
+    }
+
+    .game-item.active {
+      color: var(--white);
+    }
+
+    .game-item.active::before {
+      background: var(--green-light);
+    }
+
+    a.game-item:hover {
+      transform: translateX(12px);
+      color: var(--white);
+    }
+
+    a.game-item:hover::before {
+      background: var(--green-light);
+    }
+
+    .game-item.disabled {
+      opacity: 0.43;
+      cursor: default;
+    }
+
+    /* POLICY CONTENT */
+
+    main {
+      min-width: 0;
+      padding-top: 5px;
+      animation: appear 650ms ease both;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 23px;
+      color: var(--green-light);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: var(--green-light);
+    }
+
+    h2 {
+      margin: 0 0 15px;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 400;
+      letter-spacing: -1.3px;
+    }
+
+    .updated {
+      margin-bottom: 38px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .introduction {
+      margin-bottom: 40px;
+      padding: 22px 25px;
+      border-left: 2px solid var(--green-light);
+      background: var(--purple);
+      color: #D5CFDA;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .policy-section {
+      margin-bottom: 36px;
+    }
+
+    .policy-section h3 {
+      margin: 0 0 14px;
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+    }
+
+    .policy-section p,
+    .policy-section li {
+      color: #C5C0CA;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.9;
+    }
+
+    .policy-section p { margin: 0 0 12px; }
+
+    .policy-section ul {
+      margin: 10px 0;
+      padding-left: 22px;
+    }
+
+    .policy-section li { margin-bottom: 7px; }
+
+    .policy-section a {
+      color: #B9D0C0;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .policy-section a:hover {
+      color: var(--white);
+    }
+
+    .rule {
+      height: 1px;
+      margin: 36px 0;
+      background: var(--border);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #B9D0C0;
+      font-size: 12px;
+      transition: transform 250ms ease;
+    }
+
+    .back-link:hover {
+      transform: translateX(-5px);
+    }
+
+    footer {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: #97929D;
+      font-size: 11px;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .layout {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        padding: 40px 7% 25px;
+      }
+
+      .sidebar { position: static; }
+      .brand { margin-bottom: 45px; }
+      .brand h1 { font-size: 30px; }
+      .game-list { gap: 4px; }
+      .game-item { min-height: 42px; font-size: 14px; }
+      main { padding-top: 0; }
+      h2 { font-size: 34px; }
+      footer { margin-top: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <header class="brand">
+        <h1>Raining Star Labs</h1>
+        <p>Independent Game Studio</p>
+      </header>
+
+      <nav aria-label="Our games">
+        <div class="sidebar-label">Our Games</div>
+
+        <div class="game-list">
+          <a class="game-item active" href="index.html">
+            Dream Cat: First Dream
+          </a>
+          <span class="game-item disabled">Coming Soon</span>
+          <span class="game-item disabled">Coming Soon</span>
+        </div>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="eyebrow">Legal / Privacy</div>
+      <h2>Privacy Policy.</h2>
+      <div class="updated">Effective: November 17, 2026</div>
+
+      <div class="introduction">
+        Raining Star Labs respects your privacy. This
+        policy explains how information may be collected,
+        used, and shared when you play Dream Cat: First
+        Dream, visit our website, or contact our studio.
+      </div>
+
+      <section class="policy-section">
+        <h3>1. Who We Are</h3>
+        <p>
+          Raining Star Labs is an independent game studio
+          responsible for Dream Cat: First Dream and
+          the website rainingstarlabs.com.
+        </p>
+        <p>
+          For privacy-related inquiries, contact
+          <a href="mailto:privacy@rainingstarlabs.com">
+            privacy@rainingstarlabs.com
+          </a>.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>2. Information Collected Through the Game</h3>
+        <p>
+          Dream Cat: First Dream uses third-party
+          advertising technology provided by Google AdMob.
+          Depending on your device, platform, permissions,
+          and applicable settings, advertising services
+          may process information including:
+        </p>
+        <ul>
+          <li>Device and advertising identifiers</li>
+          <li>IP address and approximate location derived from it</li>
+          <li>Advertising interactions and performance information</li>
+          <li>App usage and technical diagnostic information</li>
+        </ul>
+        <p>
+          The availability and use of particular identifiers
+          depend on platform restrictions, consent choices,
+          and the advertising service's configuration.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>3. Advertising and Third-Party Services</h3>
+        <p>
+          We use Google AdMob to display advertisements
+          and support the operation of our game.
+          Google and its advertising partners may process
+          information to deliver advertisements, measure
+          their performance, prevent fraud, and perform
+          other activities described in their policies.
+        </p>
+        <p>
+          Advertising may be personalized or
+          non-personalized depending on applicable
+          permissions, settings, and legal requirements.
+        </p>
+        <p>
+          For further information, visit
+          <a href="https://policies.google.com/privacy"
+             target="_blank" rel="noopener noreferrer">
+            Google's Privacy Policy
+          </a>
+          and
+          <a href="https://policies.google.com/technologies/partner-sites"
+             target="_blank" rel="noopener noreferrer">
+            How Google uses information from apps and sites
+          </a>.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>4. App Tracking Transparency</h3>
+        <p>
+          On supported Apple devices, Dream Cat:
+          First Dream may request permission through
+          Apple's App Tracking Transparency framework
+          when applicable.
+        </p>
+        <p>
+          You can decline this permission or change
+          tracking permissions through your device
+          settings. Declining permission restricts
+          tracking governed by Apple's framework,
+          but does not necessarily prevent all
+          advertising, analytics, or technical
+          data processing.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>5. Website and Contact Form</h3>
+        <p>
+          When you contact Raining Star Labs using
+          our support form, we collect the information
+          you choose to provide, including your name,
+          email address, inquiry subject, and message.
+        </p>
+        <p>
+          Our contact form is processed by Formspree,
+          a third-party form submission service.
+          Formspree may also process technical
+          information necessary to deliver submissions,
+          operate the service, and prevent abuse.
+        </p>
+        <p>
+          We use submitted information to review
+          inquiries, provide support, respond to
+          feedback, and address reported issues.
+        </p>
+        <p>
+          You can review
+          <a href="https://formspree.io/legal/privacy-policy/"
+             target="_blank" rel="noopener noreferrer">
+            Formspree's Privacy Policy
+          </a>.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>6. How Information Is Used</h3>
+        <p>
+          Information processed in connection with
+          our services may be used to:
+        </p>
+        <ul>
+          <li>Display and measure advertisements</li>
+          <li>Maintain app functionality and security</li>
+          <li>Detect fraud, abuse, and technical problems</li>
+          <li>Respond to support and privacy inquiries</li>
+          <li>Comply with applicable legal obligations</li>
+        </ul>
+      </section>
+
+      <section class="policy-section">
+        <h3>7. Data Sharing</h3>
+        <p>
+          Information may be processed by service
+          providers involved in operating the game
+          and website, including Google AdMob and
+          Formspree.
+        </p>
+        <p>
+          These providers operate under their own
+          applicable privacy terms and may process
+          information in countries other than your
+          country of residence.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>8. Data Retention</h3>
+        <p>
+          Support inquiries may be retained for as
+          long as reasonably necessary to respond,
+          maintain support records, resolve disputes,
+          or comply with legal requirements.
+        </p>
+        <p>
+          Third-party service providers determine
+          retention periods for information they
+          process under their own policies and
+          applicable agreements.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>9. Your Privacy Choices and Rights</h3>
+        <p>
+          Depending on your location and applicable
+          law, you may have rights to request access,
+          correction, or deletion of personal information,
+          or to object to or restrict certain processing.
+        </p>
+        <p>
+          You may contact us at
+          <a href="mailto:privacy@rainingstarlabs.com">
+            privacy@rainingstarlabs.com
+          </a>
+          to submit a privacy request.
+        </p>
+        <p>
+          You can also manage applicable advertising
+          and tracking preferences through your
+          device settings.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>10. Children's Privacy</h3>
+        <p>
+          We recognize the importance of protecting
+          children's privacy. Our advertising and
+          data-handling practices must comply with
+          applicable children's privacy requirements
+          where those requirements apply.
+        </p>
+        <p>
+          If you believe a child has submitted
+          personal information through our contact
+          form without appropriate authorization,
+          please contact us so we can review
+          the request.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>11. Security</h3>
+        <p>
+          We take reasonable measures to protect
+          information handled through our services.
+          However, no internet transmission or
+          electronic storage system can be
+          guaranteed completely secure.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>12. Changes to This Policy</h3>
+        <p>
+          We may update this Privacy Policy to
+          reflect changes to our games, website,
+          third-party services, or legal requirements.
+          The effective date will be updated when
+          changes are published.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h3>13. Contact</h3>
+        <p>
+          Raining Star Labs<br>
+          Privacy inquiries:
+          <a href="mailto:privacy@rainingstarlabs.com">
+            privacy@rainingstarlabs.com
+          </a>
+        </p>
+        <p>
+          General support:
+          <a href="mailto:support@rainingstarlabs.com">
+            support@rainingstarlabs.com
+          </a>
+        </p>
+      </section>
+
+      <div class="rule"></div>
+
+      <a class="back-link" href="index.html">
+        ← Back to Dream Cat
+      </a>
+    </main>
+
+    <footer>
+      <span>
+        © <span id="year">2026</span> Raining Star Labs
+      </span>
+      <span lang="zh-CN">一家献给雨欣的公司</span>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
